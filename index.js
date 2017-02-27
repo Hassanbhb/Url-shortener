@@ -27,6 +27,10 @@ app.get('/short/*', function(req, res){
 app.get('/:num', function(req, res){
 	if (!isNaN(req.params.num)) {
 		res.redirect(301, URL);
+	}else{
+		res.send({
+			"error": "This is not a newly generated url, please generate a new one"
+		})
 	}
 })
 
